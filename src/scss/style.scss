@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+// コンパイル後に残らないコメント
+/* コンパイル後に残るコメント */
+
+// 存在しないscssファイルはコメントアウトしておく
+
+@import "reset";
+@import "setting/*";
+@import "function";
+@import "base";
+@import "parts/*";
+@import "layout/*";
+@import "pages/*";
+
+//詳細度上げる
+// .hoge:not(:root)

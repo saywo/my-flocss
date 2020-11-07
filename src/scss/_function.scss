@@ -1,0 +1,102 @@
+//メディアクエリ
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//タイトルだけ。本文は絶対値でいい
+@mixin perfect_vw($max-width, $min-width, $max-size, $min-size, $property) {
+  $a: ($max-size - $min-size) / ($max-width - $min-width);
+  $b: ($a * 100) + vw;
+  $c: ($min-size - $a * $min-width) + px;
+  #{$property}: $min-size + px;
+  @media (min-width: $min-width  + px) {
+    #{$property}: calc(#{$b} + #{$c});
+  }
+  @media (min-width: $max-width  + px) {
+    #{$property}: $max-size + px;
+  }
+}
+/*
+@include perfect_vw(1200, 320, 60, 14, font-size);
+*/
+
+@function size_pc($value) {
+  @return $value / map-get($design_size, pc) * 100vw;
+}
+@function size_tab($value) {
+  @return $value / map-get($design_size, tab) * 100vw;
+}
+@function size_sp($value) {
+  @return $value / map-get($design_size, sp) * 100vw;
+}
+
+// @mixin font-sizes($value, $value_sp) {
+//   font-size: $value;
+//   @include mq('lg') {
+//     font-size: size_pc($value);
+//   }
+//   @include mq('sm') {
+//     font-size: $value_sp;
+//   }
+//   @include mq('xs') {
+//     font-size: size_sp($value_sp);
+//   }
+// }
+
+// ビデオなどの比率を保つ
+@mixin responsive_box($paddingTop) {
+  position: relative;
+  padding-top: ($paddingTop) * 1%;
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+/*
+ .video {
+   width: 100%;
+   max-width: 750px;
+ }
+ .video_wrap {
+   @include responsive_box(56);
+ }
+*/
+
+//line-heightの上下カット
+@mixin lineHeight_crop($line-height) {
+  line-height: #{$line-height};
+  &::before,
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+  }
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+/*
+  @include lineHeight_crop(1.75);
+*/
+
+@mixin inner($max-width: 1100) {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  @include mq('lg') {
+    max-width: calc(#{$max-width}px + 60px); //デザイン＋左右padding
+    padding: 0 30px;
+  }
+}
+/*
+@include inner();
+*/

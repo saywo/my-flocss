@@ -1,0 +1,31 @@
+@mixin page_heading_01 {
+  font-size: 24px;
+  @include lineHeight_crop(1.75);
+}
+//本文デフォルト
+@mixin default_txt($fz: 16, $ls: 50, $lh: 1.8) {
+  font-size: #{$fz}px;
+  letter-spacing: $ls * 0.001em;
+  @include lineHeight_crop($lh);
+}
+
+//テキストhover
+@mixin hover_txt($speed: 0.5, $opacity: 0.6) {
+  transition: all #{$speed}s;
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+//spはhover効果無効
+@mixin hover($flag: true) {
+  @include mq("lg") {
+    transition: 0.4s;
+    &:hover {
+      @if $flag == true {
+        opacity: 0.75;
+      }
+      @content;
+    }
+  }
+}

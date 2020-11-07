@@ -1,0 +1,12 @@
+extends ../_layout/_page
+
+block prepend vars
+  - const ROOT_PATH = '../';
+
+block append vars
+  - const key = "company";
+  - const page = pages[key];
+
+//- ページのコンテンツ
+block content
+  section.Company

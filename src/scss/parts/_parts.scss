@@ -1,0 +1,27 @@
+/******************
+  loading
+******************/
+.loading {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: z-index(loading);
+  &-inner {
+  }
+  &-img {
+    height: auto;
+    width: 30%;
+  }
+  &-txt {
+  }
+  &.is-fadeout {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+  }
+}
