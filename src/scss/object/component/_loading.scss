@@ -1,7 +1,7 @@
 /******************
   loading
 ******************/
-.loading {
+.c-loading {
   align-items: center;
   background: #fff;
   display: flex;
@@ -12,13 +12,13 @@
   top: 0px;
   width: 100%;
   z-index: z-index(loading);
-  &-inner {
+  &_inner {
   }
-  &-img {
+  &_img {
     height: auto;
     width: 30%;
   }
-  &-txt {
+  &_txt {
   }
   &.is-fadeout {
     transition: opacity 1s ease-out;

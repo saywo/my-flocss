@@ -1,0 +1,14 @@
+.l-inner {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  @include mq('lg') {
+    max-width: 1160px; //デザイン＋左右padding
+    padding: 0 30px;
+  }
+
+  &-wide {
+  }
+  &-narrow {
+  }
+}

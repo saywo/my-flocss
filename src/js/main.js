@@ -22,27 +22,22 @@ objectFitImages();
 
 // メディアクエリ
 const breakPointSp = 'max-width:959px';
-const isSP = () => {
-  if (window.matchMedia(`(${breakPointSp})`).matches) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
 const mediaQueryList = window.matchMedia(`(${breakPointSp})`);
 const listener = (e) => {
+  const body = document.body;
   if (e.matches) {
-    console.log('mini');
-    /* the viewport is 600 pixels wide or less */
+    /* the viewport is 959 pixels wide or less */
   } else {
-    console.log('large');
-    /* the viewport is more than than 600 pixels wide */
-    document.getElementById('js-hamburger').setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('is-drawerActive');
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.classList.remove('noscroll');
+    /* the viewport is more than than 959 pixels wide */
+
+    const resetHeader = () => {
+      document.getElementById('js-hamburger').setAttribute('aria-expanded', 'false');
+      body.classList.remove('is-drawerActive');
+      body.style.position = '';
+      body.style.top = '';
+      body.classList.remove('is-noScroll');
+    };
+    resetHeader();
   }
 };
 // リスナー登録
@@ -50,9 +45,9 @@ mediaQueryList.addListener(listener);
 // 初期化処理
 listener(mediaQueryList);
 
-if (document.getElementById('js-totop')) {
+if (document.getElementById('js-toTop')) {
   const scrollTopTrigger = () => {
-    const trigger = document.getElementById('js-totop');
+    const trigger = document.getElementById('js-toTop');
     trigger.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -87,26 +82,26 @@ const headerFnc = () => {
       hamburger.setAttribute('aria-expanded', 'false');
     }
   };
-  //bodyクラスで全体を管理
-  const hamburgerBodyClass = () => {
-    if (document.body.classList.contains('is-drawerActive')) {
-      document.body.classList.remove('is-drawerActive');
+  const hamburgerIsActive = () => {
+    const targetClass = document.getElementById('js-headerNavSp').classList;
+    if (targetClass.contains('is-open')) {
+      targetClass.remove('is-open');
     } else {
-      document.body.classList.add('is-drawerActive');
+      targetClass.add('is-open');
     }
   };
   //clickイベント
   hamburger.addEventListener('click', () => {
     hamburgerIcon();
-    hamburgerBodyClass();
-    noScroll();
+    hamburgerIsActive();
+    noScrollToggle();
   });
   //spグロナビリンクをクリックで閉じる
-  const spHeaderLinks = document.querySelectorAll('.HeaderSP_nav_list--item .item-link');
+  const spHeaderLinks = document.querySelectorAll('.js-headerSpLink');
   spHeaderLinks.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       hamburgerIcon();
-      hamburgerBodyClass();
+      hamburgerIsActive();
     });
   });
 }; //sp
@@ -139,7 +134,7 @@ const externalLink = function () {
   if (!aTags.length) return;
   for (let i = 0; i < aTags.length; i++) {
     let aTag = aTags[i];
-    let href = aTag.getAttribute("href");
+    let href = aTag.getAttribute('href');
     if (href.indexOf(`${thisSiteDomain}`) !== -1) continue; //自分のドメインは対象外
     aTag.setAttribute('target', '_blank');
     aTag.setAttribute('rel', 'noopener');
@@ -150,17 +145,17 @@ const externalLink = function () {
 document.addEventListener('DOMContentLoaded', externalLink, false);
 
 //レイヤー開いてるときはbodyスクロール禁止
-function noScroll() {
+function noScrollToggle() {
   const body = document.body;
-  if (body.classList.contains('noscroll')) {
+  if (body.classList.contains('is-noScroll')) {
     // レイヤーが閉じたら、topをscrollTopに
     let top = body.style.top;
     document.body.style.position = '';
     document.body.style.top = '';
     window.scrollTo(0, parseInt(top || '0') * -1);
-    document.body.classList.remove('noscroll');
+    document.body.classList.remove('is-noScroll');
   } else {
-    document.body.classList.add('noscroll');
+    document.body.classList.add('is-noScroll');
     // レイヤーが開いたら、bodyにfixedを付与
     document.body.style.top = `-${window.scrollY}px`;
     document.body.style.position = 'fixed';
@@ -169,5 +164,5 @@ function noScroll() {
 // resizeCheckerSP(() => {
 //   document.body.style.position = '';
 //   document.body.style.top = '';
-//   document.body.classList.remove('noscroll');
+//   document.body.classList.remove('is-noScroll');
 // });

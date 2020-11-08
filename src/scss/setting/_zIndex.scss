@@ -5,7 +5,7 @@ $z-index: (
   hamburger: 200,
   footer: 100,
   loading: 9999,
-  btn-toTop: 1,
+  totop: 1,
 );
 @function z-index($key) {
   @return map-get($z-index, $key);

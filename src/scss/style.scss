@@ -3,15 +3,26 @@
 // コンパイル後に残らないコメント
 /* コンパイル後に残るコメント */
 
-// 存在しないscssファイルはコメントアウトしておく
+/*
+*FLOCSSをベースに設計
+*layoutはheader,footer,main,sidebar等、全ページ共通のもののみ
+*基本はproject, comopnent
+*pageで各ページ特有のスタイル
+*バグ修正はshame.scssで行い、解決した後にちゃんとした場所に書き換える
+*/
 
-@import "reset";
-@import "setting/*";
-@import "function";
-@import "base";
-@import "parts/*";
-@import "layout/*";
-@import "pages/*";
+@import 'setting/*';
+@import 'foundation/reset';
+@import 'foundation/function';
+@import 'foundation/animation';
+@import 'foundation/base';
+@import 'layout/*';
+@import 'object/component/*';
+@import 'object/project/*';
+@import 'object/page/*';
+@import 'object/utility/*';
+@import 'shame*';
 
 //詳細度上げる
 // .hoge:not(:root)
+// .hoge:not([class])
