@@ -1,15 +1,16 @@
 // scssコンパイルのために必須の記述
-'use strict';
+
 // import "../scss/style.scss";
 
-//js import
-import './intersectionObserver.js';
-import './smoothScroll.js';
+// js import
+import './intersectionObserver';
+import './smoothScroll';
 import '@babel/polyfill';
 // import $ from 'jquery';
 
-//ポリフィル
+// ポリフィル
 import objectFitImages from 'object-fit-images';
+
 objectFitImages();
 
 // import Stickyfill from "stickyfilljs"; //polyfill
@@ -24,7 +25,7 @@ objectFitImages();
 const breakPointSp = 'max-width:959px';
 const mediaQueryList = window.matchMedia(`(${breakPointSp})`);
 const listener = (e) => {
-  const body = document.body;
+  const { body } = document;
   if (e.matches) {
     /* the viewport is 959 pixels wide or less */
   } else {
@@ -58,7 +59,7 @@ if (document.getElementById('js-toTop')) {
   scrollTopTrigger();
 }
 
-//別ページからのアンカーずれ解消
+// 別ページからのアンカーずれ解消
 document.addEventListener('DOMContentLoaded', () => {
   if (location.hash) {
     const headerHeight = document.getElementById('js-header').clientHeight;
@@ -76,7 +77,7 @@ const headerFnc = () => {
   const hamburger = document.getElementById('js-hamburger');
   const hamburgerIcon = () => {
     const ariaExpanded = hamburger.getAttribute('aria-expanded');
-    if (ariaExpanded == 'false') {
+    if (ariaExpanded === 'false') {
       hamburger.setAttribute('aria-expanded', 'true');
     } else {
       hamburger.setAttribute('aria-expanded', 'false');
@@ -90,13 +91,13 @@ const headerFnc = () => {
       targetClass.add('is-open');
     }
   };
-  //clickイベント
+  // clickイベント
   hamburger.addEventListener('click', () => {
     hamburgerIcon();
     hamburgerIsActive();
     noScrollToggle();
   });
-  //spグロナビリンクをクリックで閉じる
+  // spグロナビリンクをクリックで閉じる
   const spHeaderLinks = document.querySelectorAll('.js-headerSpLink');
   spHeaderLinks.forEach((trigger) => {
     trigger.addEventListener('click', () => {
@@ -104,7 +105,7 @@ const headerFnc = () => {
       hamburgerIsActive();
     });
   });
-}; //sp
+}; // sp
 headerFnc();
 
 /*
@@ -127,29 +128,31 @@ headerFnc();
  * target="_blank"にrel="noopener"を付与
  * 自分のドメイン、ハッシュは対象外
  */
-const externalLink = function () {
+const externalLink = () => {
   const thisSiteDomain = document.domain;
   const aTags = document.querySelectorAll('a:not([target="_blank"])');
-  let array = [];
+  // const array = [];
   if (!aTags.length) return;
-  for (let i = 0; i < aTags.length; i++) {
-    let aTag = aTags[i];
-    let href = aTag.getAttribute('href');
-    if (href.indexOf(`${thisSiteDomain}`) !== -1) continue; //自分のドメインは対象外
+  for (let i = 0; i < aTags.length; i += 1) {
+    const aTag = aTags[i];
+    const href = aTag.getAttribute('href');
+    if (href.indexOf(`${thisSiteDomain}`) !== -1) {
+      return; // 自分のドメインは対象外
+    }
     aTag.setAttribute('target', '_blank');
     aTag.setAttribute('rel', 'noopener');
-    array.push(aTag);
+    // array.push(aTag);
   }
-  return array;
+  // return array;
 };
 document.addEventListener('DOMContentLoaded', externalLink, false);
 
-//レイヤー開いてるときはbodyスクロール禁止
+// レイヤー開いてるときはbodyスクロール禁止
 function noScrollToggle() {
-  const body = document.body;
+  const { body } = document;
   if (body.classList.contains('is-noScroll')) {
     // レイヤーが閉じたら、topをscrollTopに
-    let top = body.style.top;
+    const { top } = body.style;
     document.body.style.position = '';
     document.body.style.top = '';
     window.scrollTo(0, parseInt(top || '0') * -1);

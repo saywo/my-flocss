@@ -2,35 +2,35 @@
   ページネーション
 ******************/
 .nav-links {
-  margin-bottom: 60px;
-  text-align: center;
-  @include mq("lg") {
-    margin-bottom: 120px;
-  }
+    margin-bottom: 60px;
+    text-align: center;
+    @include mq('lg') {
+        margin-bottom: 120px;
+    }
 }
 
 /******************
   ナビゲーション
 ******************/
 .page-numbers {
-  display: inline-block;
-  height: 25px;
-  line-height: 25px;
-  margin: 0 3px;
-  text-align: center;
-  width: 25px;
-  &.current {
-    background-color: #241e1c;
-    color: #fff;
-  }
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 3px;
+    text-align: center;
+    width: 25px;
+    &.current {
+        background-color: #241e1c;
+        color: #fff;
+    }
 }
 .prev,
 .next {
-  border-bottom: 1px solid #241e1c;
-  height: 24px; //page-numbers -1
-  width: auto;
+    border-bottom: 1px solid #241e1c;
+    height: 24px; //page-numbers -1
+    width: auto;
 }
 
 .screen-reader-text {
-  display: none;
+    display: none;
 }

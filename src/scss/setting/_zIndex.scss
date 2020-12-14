@@ -1,12 +1,12 @@
 //z-index
 $z-index: (
-  header: 100,
-  navGlobal: 100,
-  hamburger: 200,
-  footer: 100,
-  loading: 9999,
-  totop: 1,
+    header: 100,
+    navGlobal: 100,
+    hamburger: 200,
+    footer: 100,
+    loading: 9999,
+    totop: 1,
 );
 @function z-index($key) {
-  @return map-get($z-index, $key);
+    @return map-get($z-index, $key);
 }

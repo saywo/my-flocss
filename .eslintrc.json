@@ -1,0 +1,27 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"plugins": [
+		"import"
+	],
+	"extends": [
+		"airbnb-base",
+		"eslint:recommended",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"singleQuote": true,
+				"trailingComma": "es5"
+			}
+		]
+	},
+	"parserOptions": {
+		"sourceType": "module" //import,exportに必要
+	}
+}
+//lint後のELIFECYCLE errorは無視

@@ -1,23 +1,23 @@
 .c-modal {
-  display: none;
-  position: relative;
-  &::before {
-    position: absolute;
-    content: '';
-    display: block;
-    background-color: rgba(#000, 0.8);
-    width: 100%;
-    height: 100%;
-  }
-  &.is-open {
-    display: block;
-  }
-  &_inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &_content {
-    width: 800px;
-  }
+    display: none;
+    position: relative;
+    &::before {
+        background-color: rgba(#000, 0.8);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    &.is-open {
+        display: block;
+    }
+    &_inner {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    &_content {
+        width: 800px;
+    }
 }

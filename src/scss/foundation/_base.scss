@@ -1,62 +1,62 @@
 * {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
 html {
-  overflow: auto;
+    overflow: auto;
 }
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  position: relative;
-  width: 100%;
-  color: $color_text_default;
-  font-family: $ff-gothic;
+    color: $color_text_default;
+    font-family: $ff-gothic;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    width: 100%;
 }
 img {
-  border-style: none;
-  height: auto;
-  width: 100%;
-  vertical-align: bottom;
-  [data-objectfit='cover'] {
-    object-fit: cover;
-  }
+    border-style: none;
+    height: auto;
+    vertical-align: bottom;
+    width: 100%;
+    [data-objectfit='cover'] {
+        object-fit: cover;
+    }
 }
 iframe,
 video {
-  width: 100%;
+    width: 100%;
 }
 div,
 span,
 a {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
 table {
-  text-align: left;
+    text-align: left;
 }
 //タブ操作時以外はoutline非表示
 a,
 button {
-  &:hover,
-  &:active {
-    outline-width: 0;
-  }
+    &:hover,
+    &:active {
+        outline-width: 0;
+    }
 }
 //PCではtelリンク無効
 @include mq('lg') {
-  a[href*='tel:'] {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-  }
+    a[href*='tel:'] {
+        cursor: default;
+        pointer-events: none;
+        text-decoration: none;
+    }
 }
 :root {
-  --outer-height: 100vh;
+    --outer-height: 100vh;
 }

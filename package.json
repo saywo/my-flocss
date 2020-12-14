@@ -22,6 +22,8 @@
     "watch:document": "chokidar \"src/document/\" --command \"npm run copy:document\" --initial",
     "lint:scss": "stylelint \"**/*.scss\"",
     "format:scss": "stylelint --fix \"**/*.scss\"",
+    "lint:js": "eslint src/js/**/*.js",
+    "format:js": "eslint src/js/**/*.js --fix",
     "min:css": "cleancss -o dist/assets/css/style.css dist/assets/css/style.css",
     "min:js": "uglifyjs dist/assets/js/main.js -o dist/assets/js/main.js",
     "delete:map": "rimraf dist/assets/**/*.map",
@@ -29,11 +31,11 @@
     "prepare": "run-s delete:dist copy:meta optimize:img",
     "dev": "run-p watch:document watch:scss2cssprefix watch:webpack start:server",
     "dev:img": "run-p watch:img watch:document watch:scss2cssprefix watch:webpack start:server",
-    "build": "run-s copy:document compile:scss2cssprefix webpack optimize:assets"
+    "format:all": "run-p format:scss format:js",
+    "build": "run-s copy:document compile:scss2cssprefix webpack format:all optimize:assets"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
-    "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
@@ -42,6 +44,11 @@
     "clean-css-cli": "^4.3.0",
     "cpx": "^1.5.0",
     "css-declaration-sorter": "^5.1.2",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "http-proxy": "^1.18.1",
     "imagemin-cli": "^6.0.0",
     "imagemin-keep-folder": "^5.3.2",
@@ -68,6 +75,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "intersection-observer": "^0.10.0",
     "object-fit-images": "^3.2.4",
     "smooth-scroll": "^16.1.3",

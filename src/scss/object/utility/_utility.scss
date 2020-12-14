@@ -1,152 +1,152 @@
 .u-block {
-  &-show {
-    &-xs {
-      display: none;
-      @include mq('xs') {
-        display: block;
-      }
+    &-show {
+        &-xs {
+            display: none;
+            @include mq('xs') {
+                display: block;
+            }
+        }
+        &-sm {
+            display: none;
+            @include mq('sm') {
+                display: block;
+            }
+        }
+        &-md {
+            display: none;
+            @include mq('md') {
+                display: block;
+            }
+        }
+        &-lg {
+            display: none;
+            @include mq('lg') {
+                display: block;
+            }
+        }
+        &-xl {
+            display: none;
+            @include mq('xl') {
+                display: block;
+            }
+        }
     }
-    &-sm {
-      display: none;
-      @include mq('sm') {
-        display: block;
-      }
+    &-hide {
+        &-xs {
+            display: block;
+            @include mq('xs') {
+                display: none !important;
+            }
+        }
+        &-sm {
+            display: block;
+            @include mq('sm') {
+                display: none !important;
+            }
+        }
+        &-md {
+            display: block;
+            @include mq('md') {
+                display: none !important;
+            }
+        }
+        &-lg {
+            display: block;
+            @include mq('lg') {
+                display: none !important;
+            }
+        }
+        &-xl {
+            display: block;
+            @include mq('xl') {
+                display: none !important;
+            }
+        }
     }
-    &-md {
-      display: none;
-      @include mq('md') {
-        display: block;
-      }
-    }
-    &-lg {
-      display: none;
-      @include mq('lg') {
-        display: block;
-      }
-    }
-    &-xl {
-      display: none;
-      @include mq('xl') {
-        display: block;
-      }
-    }
-  }
-  &-hide {
-    &-xs {
-      display: block;
-      @include mq('xs') {
-        display: none !important;
-      }
-    }
-    &-sm {
-      display: block;
-      @include mq('sm') {
-        display: none !important;
-      }
-    }
-    &-md {
-      display: block;
-      @include mq('md') {
-        display: none !important;
-      }
-    }
-    &-lg {
-      display: block;
-      @include mq('lg') {
-        display: none !important;
-      }
-    }
-    &-xl {
-      display: block;
-      @include mq('xl') {
-        display: none !important;
-      }
-    }
-  }
 }
 
 //<br>にはinlineの方を使う
 .u-inline- {
-  &-show {
-    &-xs {
-      display: none;
-      @include mq('xs') {
-        display: inline;
-      }
+    &-show {
+        &-xs {
+            display: none;
+            @include mq('xs') {
+                display: inline;
+            }
+        }
+        &-sm {
+            display: none;
+            @include mq('sm') {
+                display: inline;
+            }
+        }
+        &-md {
+            display: none;
+            @include mq('md') {
+                display: inline;
+            }
+        }
+        &-lg {
+            display: none;
+            @include mq('lg') {
+                display: inline;
+            }
+        }
+        &-xl {
+            display: none;
+            @include mq('xl') {
+                display: inline;
+            }
+        }
     }
-    &-sm {
-      display: none;
-      @include mq('sm') {
-        display: inline;
-      }
-    }
-    &-md {
-      display: none;
-      @include mq('md') {
-        display: inline;
-      }
-    }
-    &-lg {
-      display: none;
-      @include mq('lg') {
-        display: inline;
-      }
-    }
-    &-xl {
-      display: none;
-      @include mq('xl') {
-        display: inline;
-      }
-    }
-  }
 
-  &-hide {
-    &-xs {
-      display: inline;
-      @include mq('xs') {
-        display: none !important;
-      }
+    &-hide {
+        &-xs {
+            display: inline;
+            @include mq('xs') {
+                display: none !important;
+            }
+        }
+        &-sm {
+            display: inline;
+            @include mq('sm') {
+                display: none !important;
+            }
+        }
+        &-md {
+            display: inline;
+            @include mq('md') {
+                display: none !important;
+            }
+        }
+        &-lg {
+            display: inline;
+            @include mq('lg') {
+                display: none !important;
+            }
+        }
+        &-xl {
+            display: inline;
+            @include mq('xl') {
+                display: none !important;
+            }
+        }
     }
-    &-sm {
-      display: inline;
-      @include mq('sm') {
-        display: none !important;
-      }
-    }
-    &-md {
-      display: inline;
-      @include mq('md') {
-        display: none !important;
-      }
-    }
-    &-lg {
-      display: inline;
-      @include mq('lg') {
-        display: none !important;
-      }
-    }
-    &-xl {
-      display: inline;
-      @include mq('xl') {
-        display: none !important;
-      }
-    }
-  }
 }
 
 //グローバルなヘルパークラス
 .u-bold {
-  font-weight: bold !important;
+    font-weight: bold !important;
 }
 .u-text-center {
-  text-align: center !important;
+    text-align: center !important;
 }
 .u-text-right {
-  text-align: right !important;
+    text-align: right !important;
 }
 .u-text-left {
-  text-align: left !important;
+    text-align: left !important;
 }
 .u-text-uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }

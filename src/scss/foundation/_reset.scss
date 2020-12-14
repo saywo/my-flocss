@@ -2,7 +2,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 html,
 body,
@@ -40,14 +40,14 @@ th,
 td,
 figure,
 address {
-  border: 0;
-  box-sizing: border-box;
-  font-size: 100%;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 article,
@@ -58,29 +58,29 @@ header,
 nav,
 section,
 main {
-  display: block;
+    display: block;
 }
 
 body {
-  letter-spacing: 0;
-  line-height: 1;
+    letter-spacing: 0;
+    line-height: 1;
 }
 
 a {
-  color: inherit;
-  font-weight: inherit;
-  text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
 }
 
 ol,
 ul,
 li {
-  list-style: none;
+    list-style: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 //フォーム
@@ -88,23 +88,23 @@ input,
 button,
 select,
 textarea {
-  appearance: none;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  font: inherit;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font: inherit;
 }
 
 textarea {
-  min-height: 10em;
-  min-width: 100%;
-  max-width: 100%;
-  resize: vertical;
+    max-width: 100%;
+    min-height: 10em;
+    min-width: 100%;
+    resize: vertical;
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-  display: none;
+    display: none;
 }
 
 input[type='submit'],
@@ -112,20 +112,20 @@ input[type='button'],
 label,
 button,
 select {
-  cursor: pointer;
-  padding: 0;
+    cursor: pointer;
+    padding: 0;
 }
 
 input[type='text'],
 input[type='email'],
 input[type='tel'],
 textarea {
-  //safariのplaceholderずれ
-  &::-webkit-input-placeholder {
-    padding-top: 0.25em;
-  }
+    //safariのplaceholderずれ
+    &::-webkit-input-placeholder {
+        padding-top: 0.25em;
+    }
 }
 
 select::-ms-expand {
-  display: none;
+    display: none;
 }

@@ -1,15 +1,15 @@
 $breakpoints: (
-  'xs': 'screen and (max-width: 480px)',
-  'sm': 'screen and (max-width: 768px)',
-  'md': 'screen and (max-width: 1024px)',
-  'lg': 'screen and (min-width: 1025px)',
-  'xl': 'screen and (min-width: 1280px)',
-  'se': 'screen and (max-width: 374px)',
-  'ie': 'screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)',
+    'xs': 'screen and (max-width: 480px)',
+    'sm': 'screen and (max-width: 768px)',
+    'md': 'screen and (max-width: 1024px)',
+    'lg': 'screen and (min-width: 1025px)',
+    'xl': 'screen and (min-width: 1280px)',
+    'se': 'screen and (max-width: 374px)',
+    'ie': 'screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)',
 ) !default;
 
 $design_size: (
-  'sp': '375',
-  'tab': '768',
-  'pc': '1280',
+    'sp': '375',
+    'tab': '768',
+    'pc': '1280',
 ) !default;
