@@ -1,5 +1,5 @@
 .c-text {
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    @include lineheight_crop(1.8);
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  @include lineHeightCrop(1.8);
 }

@@ -1,25 +1,25 @@
 .p-mv {
-    background-color: #3cc;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    @include mq('sm') {
-        height: calc(100vh - #{$header-height-sp});
-        height: calc(var(--outer-height) - #{$header-height-sp});
-        margin-top: $header-height-sp;
+  background-color: #3cc;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  @include mq('sm') {
+    height: calc(100vh - #{$header-height-sp});
+    height: calc(var(--outer-height) - #{$header-height-sp});
+    margin-top: $header-height-sp;
+  }
+  &_inner {
+  }
+  &_catch {
+    padding: 30vh 0;
+    text-align: center;
+    &Main {
+      font-size: 50px;
+      @include lineHeightCrop(1.75);
     }
-    &_inner {
+    &Sub {
+      font-size: 30px;
+      @include lineHeightCrop(1.75);
     }
-    &_catch {
-        padding: 30vh 0;
-        text-align: center;
-        &Main {
-            font-size: 50px;
-            @include lineheight_crop(1.75);
-        }
-        &Sub {
-            font-size: 30px;
-            @include lineheight_crop(1.75);
-        }
-    }
+  }
 }

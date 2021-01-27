@@ -1,48 +1,48 @@
 //メディアクエリ
 @mixin mq($breakpoint: sp) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @content;
-    }
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }
 
 //タイトルだけ。本文は絶対値でいい
 @mixin perfect_vw($max-width, $min-width, $max-size, $min-size, $property) {
-    $a: ($max-size - $min-size) / ($max-width - $min-width);
-    $b: ($a * 100) + vw;
-    $c: ($min-size - $a * $min-width) + px;
-    #{$property}: $min-size + px;
-    @media (min-width: $min-width  + px) {
-        #{$property}: calc(#{$b} + #{$c});
-    }
-    @media (min-width: $max-width  + px) {
-        #{$property}: $max-size + px;
-    }
+  $a: ($max-size - $min-size) / ($max-width - $min-width);
+  $b: ($a * 100) + vw;
+  $c: ($min-size - $a * $min-width) + px;
+  #{$property}: $min-size + px;
+  @media (min-width: $min-width  + px) {
+    #{$property}: calc(#{$b} + #{$c});
+  }
+  @media (min-width: $max-width  + px) {
+    #{$property}: $max-size + px;
+  }
 }
 /*
 @include perfect_vw(1200, 320, 60, 14, font-size);
 */
 
 @function vw_pc($value) {
-    @return $value / map-get($design_size, pc) * 100vw;
+  @return $value / 375 * 100vw;
 }
 @function vw_tab($value) {
-    @return $value / map-get($design_size, tab) * 100vw;
+  @return $value / 768 * 100vw;
 }
 @function vw_sp($value) {
-    @return $value / map-get($design_size, sp) * 100vw;
+  @return $value / 1280 * 100vw;
 }
 
 // ビデオなどの比率を保つ
-@mixin responsive_box($paddingTop) {
-    padding-top: ($paddingTop) * 1%;
-    position: relative;
-    & > *:first-child {
-        height: 100% !important;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100% !important;
-    }
+@mixin aspectRatio($paddingTop) {
+  padding-top: ($paddingTop) * 1%;
+  position: relative;
+  & > *:first-child {
+    height: 100% !important;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+  }
 }
 /*
 	.video {
@@ -50,27 +50,27 @@
 		max-width: 750px;
 	}
 	.video_wrap {
-		@include responsive_box(56);
+		@include aspectRatio(56);
 	}
 */
 
 //line-heightの上下カット
-@mixin lineheight_crop($line-height) {
-    line-height: #{$line-height};
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-    }
-    &::before {
-        margin-top: calc((1 - #{$line-height}) * 0.5em);
-    }
-    &::after {
-        margin-bottom: calc((1 - #{$line-height}) * 0.5em);
-    }
+@mixin lineHeightCrop($line-height) {
+  line-height: #{$line-height};
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
 }
 /*
-  @include lineheight_crop(1.75);
+  @include lineHeightCrop(1.75);
 */
