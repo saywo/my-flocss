@@ -1,0 +1,107 @@
+header#js-header.l-header.is-fixed(data-scroll-header="")
+	.l-header_top
+		h1.l-header_topText タイトル
+	.l-header_main
+		p.l-header_logo
+			a(href="/")
+				img(src=imgPath+"common/logo.svg" alt="")
+		button#js-hamburger.l-header_hamburger(type="button" aria-controls="global-nav" aria-expanded="false")
+			span.l-header_hamburgerLine
+				span.l-header_hamburgerHidden メニューを開閉する
+		.l-header_search
+			input(type="text" placeholder="何をお探しですか？")
+		dl.l-header_tag
+			dt.l-header_tagTitle 注目キーワードタグ
+			dd.l-header_tagContent
+				ul.l-header_tagList
+					li.l-header_tagItem
+						a.l-header_tagLink.c-tag(href="#") 未使用品
+					li.l-header_tagItem
+						a.l-header_tagLink.c-tag(href="#") テレワーク
+					li.l-header_tagItem
+						a.l-header_tagLink.c-tag(href="#") 動画もサクサク
+		.l-header_others
+			ul.l-header_othersList
+				li.l-header_othersItem
+					a.l-header_othersLink(href="#")
+						span.l-header_othersIcon
+							img(src=imgPath+"common/icon_history.svg")
+						span.l-header_othersText 閲覧履歴
+				li.l-header_othersItem
+					a.l-header_othersLink(href="#")
+						span.l-header_othersIcon
+							img(src=imgPath+"common/icon_contact.svg")
+						span.l-header_othersText お問い合わせ
+				li.l-header_othersItem
+					a.l-header_othersLink(href="#")
+						span.l-header_othersIcon
+							img(src=imgPath+"common/icon_cart.svg")
+						span.l-header_othersText カート
+	//- nav#js-headerNavSp.l-headerNavSp
+	//- 	.l-headerNavSp_inner
+	//- 		ul.l-headerNavSp_list
+	//- 			li.l-headerNavSp_item
+	//- 				a.l-headerNavSp_link.js-headerSpLink(href="#about")
+	//- 					span.l-headerNavSp_txt リスト1
+	//- 			li.l-headerNavSp_item
+	//- 				a.l-headerNavSp_link.js-headerSpLink(href="#address")
+	//- 					span.l-headerNavSp_txt リスト2
+	//- 			li.l-headerNavSp_item
+	//- 				a.l-headerNavSp_link.js-headerSpLink(href="/company/")
+	//- 					span.l-headerNavSp_txt 会社概要
+	nav#js-headerNavSp.c-drawer.l-headerNavSp
+		.c-drawer_inner
+			.c-drawer_body.l-headerNavSp_body
+				dl.c-drawer_search
+					dt.c-drawer_title フリーワードで検索
+					dd.c-drawer_searchContent
+						input(type="text" placeholder="商品名・スペックなどを入力")
+				a.l-headerNavSpLink(href="#")
+					span.l-headerNavSpLink_icon
+					span.l-headerNavSpLink_text カート
+				a.l-headerNavSpLink(href="#")
+					span.l-headerNavSpLink_icon
+					span.l-headerNavSpLink_text 閲覧履歴
+				dl.c-drawerList
+					dt.c-drawer_title 商品を探す
+					dd.c-drawerList_content
+						ul.c-drawerList_list
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") 目的から探す
+							li.c-drawerList_item
+								button#js-headerNavSpButton.c-drawerList_link カテゴリーから探す
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") 新商品
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") 特集
+				dl.c-drawerList
+					dt.c-drawer_title その他
+					dd.c-drawerList_content
+						ul.c-drawerList_list
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") お支払い方法
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") 送料・配送
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") 保証・返品
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") お問い合わせ
+	#js-headerNavSp2.c-drawer.l-headerNavSp2
+		.c-drawer_inner
+			.c-drawer_body
+				.c-drawer_bodyHead
+					button#js-headerNavSpBack.c-drawer_back 戻る
+				dl.c-drawerList
+					dt.c-drawer_title カテゴリーから探す
+					dd.c-drawerList_content
+						ul.c-drawerList_list
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") ノートパソコン
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") デスクトップパソコン
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") ディスプレイモニター
+							li.c-drawerList_item
+								a.c-drawerList_link(href="#") タブレット
+
+

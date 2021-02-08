@@ -1,0 +1,188 @@
+extends ./_layout/_home.pug
+
+block vars
+	include ./_config/_config.pug
+	- var key = "top"
+	- var page = pages[key]
+
+block contents
+	.p-mv
+		.p-mv_inner.l-inner
+			.p-mv_main
+				.p-mv_catch
+					p.p-mv_catchMain リユース製品で、<br>豊かな毎日を。
+					p.p-mv_catchSub 高品質なリユース製品たち。<br>万全の保証とともに、<br class="u-show-sm">低価格でご提供いたします。
+				ul.p-mv_point
+					li.p-mv_pointItem 高品質の商品
+					li.p-mv_pointItem 安心の3年保証
+					li.p-mv_pointItem 法人様にも対応
+		.p-mvSlider
+			ul.p-mvSlider_list#js-mv-slider
+				li.p-mvSlider_item.c-card.js-mv-slide
+					a.p-mvSlider_link.c-card_inner(href="#")
+						h3.p-mvSlider_name.c-card_name テレワーク応援特集
+						div.p-mvSlider_img.c-card_img.-ratioB
+							img(src=imgPath+"special/img_special_01.jpg")
+				li.p-mvSlider_item.c-card.js-mv-slide
+					a.p-mvSlider_link.c-card_inner(href="#")
+						h3.p-mvSlider_name.c-card_name テレワーク応援特集
+						div.p-mvSlider_img.c-card_img.-ratioB
+							img(src=imgPath+"special/img_special_02.jpg")
+				li.p-mvSlider_item.c-card.js-mv-slide
+					a.p-mvSlider_link.c-card_inner(href="#")
+						h3.p-mvSlider_name.c-card_name テレワーク応援特集
+						div.p-mvSlider_img.c-card_img.-ratioB
+							img(src=imgPath+"special/img_special_01.jpg")
+				li.p-mvSlider_item.c-card.js-mv-slide
+					a.p-mvSlider_link.c-card_inner(href="#")
+						h3.p-mvSlider_name.c-card_name テレワーク応援特集
+						div.p-mvSlider_img.c-card_img.-ratioB
+							img(src=imgPath+"special/img_special_02.jpg")
+	section.p-homePurpose#purpose
+		.p-homePurpose_inner.l-inner
+			.p-homePurpose_body
+				h2.c-headingA
+					span.en Purpose
+					span.ja 目的から探す
+				ul.p-homePurpose_list
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name テレワークに最適
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_01.jpg")
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name 初めてのPCにぴったり
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_02.jpg")
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name サクサクGaming PC
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_03.jpg")
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name デザイン性に優れたPC
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_04.jpg")
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name 大画面液晶のPC
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_05.jpg")
+					li.p-homePurpose_item.c-card
+						a(href="#").p-homePurpose_itemLink.c-card_inner
+							h3.p-homePurpose_itemName.c-card_name 持ち運びもラクラク
+							div.p-homePurpose_itemImg.c-card_img.-ratioA
+								img(src=imgPath+"purpose/img_purpose_06.jpg")
+				a.p-homePurpose_button.c-buttonA(href="#")
+					span.c-buttonA_text もっと見る
+
+	section.p-homeCategory#category
+		.p-homeCategory_inner.l-inner
+			.p-homeCategory_body
+				h2.c-headingA
+					span.en Category
+					span.ja カテゴリーから探す
+				ul.p-homeCategory_list
+					li.p-homeCategory_item
+						a.p-homeCategory_itemLink(href="#")
+							span.p-homeCategory_itemIcon
+								img(src=imgPath+"home/icon_category_01.svg", alt="")
+							h3.p-homeCategory_itemName ノートパソコン
+					li.p-homeCategory_item
+						a.p-homeCategory_itemLink(href="#")
+							span.p-homeCategory_itemIcon
+								img(src=imgPath+"home/icon_category_02.svg", alt="")
+							h3.p-homeCategory_itemName デスクトップパソコン
+					li.p-homeCategory_item
+						a.p-homeCategory_itemLink(href="#")
+							span.p-homeCategory_itemIcon
+								img(src=imgPath+"home/icon_category_03.svg", alt="")
+							h3.p-homeCategory_itemName ディスプレイモニター
+					li.p-homeCategory_item
+						a.p-homeCategory_itemLink(href="#")
+							span.p-homeCategory_itemIcon
+								img(src=imgPath+"home/icon_category_04.svg", alt="")
+							h3.p-homeCategory_itemName タブレット
+
+	section.p-homeNewitem#newitem
+		.p-homeNewitem_inner.l-inner
+			.p-homeNewitem_body
+				h2.c-headingA
+					span.en New Item
+					span.ja 新商品
+				-
+					const newItemArray = [
+						{
+							img:imgPath+"product/img_product_01.jpg",
+							company:"LENOVO",
+							name:"ThinkPad X1 Carbon 20KG-S0BN00",
+							oldprice:"132,230",
+							newprice:"111,111",
+							tags:["未使用品","A4ノート"]
+						},
+						{
+							img:imgPath+"product/img_product_01.jpg",
+							company:"LENOVO",
+							name:"ThinkPad X1 Carbon 20KG-S0BN00",
+							oldprice:"132,230",
+							newprice:"111,111",
+							tags:["未使用品","A4ノート"]
+						},
+						{
+							img:imgPath+"product/img_product_01.jpg",
+							company:"LENOVO",
+							name:"ThinkPad X1 Carbon 20KG-S0BN00",
+							oldprice:"132,230",
+							newprice:"111,111",
+							tags:["中古品","A4ノート"]
+						}
+					];
+				ul.p-homeNewitem_list
+					each item in newItemArray
+						li.p-homeNewitem_item.p-product
+							a.p-homeNewitem_itemLink.p-product_link(href="")
+								span.p-homeNewitem_itemImg.p-product_img
+									img(src=imgPath+"product/img_product_01.jpg", alt="")
+							.p-homeNewitem_itemHead.p-product_head
+								p.p-homeNewitem_itemCompany.p-product_company #{item.company}
+								h3.p-homeNewitem_itemName.p-product_name #{item.name}
+							.p-homeNewitem_itemPrice.p-product_price
+								p.old #{item.oldprice}（税込）
+								p.new
+									<span class="number">#{item.newprice}</span>円（税込）
+							.p-product_tags
+								each tag in item.tags
+									span.c-tag #{tag}
+				a.p-homeNewitem_button.c-buttonA(href="#")
+					span.c-buttonA_text もっと見る
+
+	section.p-homeSpecial#special
+		.p-homeSpecial_inner.l-inner
+			.p-homeSpecial_body
+				h2.c-headingA
+					span.en Specail
+					span.ja 特集
+				ul.p-homeSpecial_list
+					li.p-homeSpecial_item.c-card
+						a.p-homeSpecial_itemLink.c-card_inner(href="#")
+							h3.p-homeSpecial_itemName.c-card_name テレワーク応援特集
+							div.p-homeSpecial_itemImg.c-card_img.-ratioB
+								img(src=imgPath+"special/img_special_01.jpg")
+					li.p-homeSpecial_item.c-card
+						a.p-homeSpecial_itemLink.c-card_inner(href="#")
+							h3.p-homeSpecial_itemName.c-card_name ブラックフライデー特集
+							div.p-homeSpecial_itemImg.c-card_img.-ratioB
+								img(src=imgPath+"special/img_special_02.jpg")
+				a.p-homeSpecial_button.c-buttonA(href="#")
+					span.c-buttonA_text もっと見る
+
+	section.p-homeReason
+		.l-inner.p-homeReason_inner
+			.p-homeReason_content
+				.p-homeReason_body
+					h2.p-homeReason_heading ブランド名が選ばれる理由
+					p.p-homeReason_desc 安心の3年保証、商品到着後の7日間の返品受付可能など、<br class="u-hide-sm">〜が選ばれる理由をご紹介致します。<br class="u-hide-sm">ご利用頂いたお客さまの声も掲載しております。
+					a.p-homeReason_button.c-buttonB(href="#")
+						span.c-buttonB_text 詳しく見る

@@ -1,0 +1,13 @@
+.c-pageHead
+	.c-pageHead_inner.l-inner
+		nav.c-breadcrumb
+				ul.c-breadcrumb_list
+					li.c-breadcrumb_item
+						a.c-breadcrumb_text(href="/") TOP
+					each item,index in page.breadcrumb
+						li.c-breadcrumb_item
+							if index === page.breadcrumb.length - 1
+								span.c-breadcrumb_text #{item.text}
+							else
+								a.c-breadcrumb_text(href=item.path) #{item.text}
+		h1.c-pageHead_title #{page.title}

@@ -6,7 +6,7 @@
 }
 
 //タイトルだけ。本文は絶対値でいい
-@mixin perfect_vw($max-width, $min-width, $max-size, $min-size, $property) {
+@mixin perfectVw($max-width, $min-width, $max-size, $min-size, $property) {
   $a: ($max-size - $min-size) / ($max-width - $min-width);
   $b: ($a * 100) + vw;
   $c: ($min-size - $a * $min-width) + px;
@@ -19,7 +19,7 @@
   }
 }
 /*
-@include perfect_vw(1200, 320, 60, 14, font-size);
+@include perfectVw(1200, 320, 60, 14, font-size);
 */
 
 @function vw_pc($value) {
