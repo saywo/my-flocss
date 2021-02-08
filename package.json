@@ -1,6 +1,6 @@
 {
   "//": {
-    "prepare": "dist削除、metaコピー、画像コピー圧縮",
+		"prepare": "dist削除、metaコピー、画像コピー圧縮",
     "dev": "pug,webpack,browser-sync",
     "build": "完成"
   },
@@ -8,9 +8,12 @@
   "scripts": {
     "start:server": "browser-sync start --open=\"external\" --server dist -watch dist/*.html dist/assets/css/*.css dist/assets/js/*.js",
     "webpack": "npx webpack",
-    "watch:webpack": "npx webpack --watch",
+		"watch:webpack": "npx webpack --watch",
+    "copy:document": "cpx \"src/document/**\" dist/",
+    "watch:document": "chokidar \"src/document/\" --command \"npm run copy:document\" --initial",
+		"pug2html": "pug src/pug/ --hierarchy -o dist/",
+		"watch:pug2html": "pug src/pug/ --hierarchy -o dist/ -w -P",
     "optimize:img": "node imagemin.js",
-    "watch:img": "chokidar \"src/img/**/*\" --command \"npm run optimize:img\" --initial",
     "convertjpg2webp": "for file *; do cwebp $file -o ${file}.webp; done",
     "compile:scss2css": "node-sass src/scss/style.scss --importer node_modules/node-sass-globbing/index.js dist/assets/css/style.css --output-style expanded --source-map dist/assets/css/",
     "compile:css2cssprefix": "postcss dist/assets/css/style.css -u autoprefixer -o dist/assets/css/style.css",
@@ -18,8 +21,6 @@
     "watch:scss2cssprefix": "chokidar \"src/scss/\" --command \"npm run compile:scss2cssprefix\" --initial",
     "delete:dist": "rimraf dist",
     "copy:meta": "cpx \"src/meta/**\" dist/assets/meta/",
-    "copy:document": "cpx \"src/document/**\" dist/",
-    "watch:document": "chokidar \"src/document/\" --command \"npm run copy:document\" --initial",
     "lint-format:scss": "stylelint --fix \"**/*.scss\"",
     "lint-format:js": "eslint --fix src/js/**/*.js && prettier --write src/js/**/*.js",
     "min:css": "cleancss -o dist/assets/css/style.css dist/assets/css/style.css",
@@ -27,9 +28,9 @@
     "delete:map": "rimraf dist/assets/**/*.map",
     "optimize:assets": "run-p min:css min:js delete:map",
     "prepare": "run-s delete:dist copy:meta optimize:img",
-    "dev": "run-p watch:document watch:scss2cssprefix watch:webpack start:server",
     "format:all": "run-p lint-format:scss lint-format:js delete:map",
-    "build": "run-s copy:document compile:scss2cssprefix webpack format:all optimize:assets"
+    "dev": "run-p watch:document watch:pug2html watch:scss2cssprefix watch:webpack start:server",
+    "build": "run-s copy:document pug2html compile:scss2cssprefix webpack format:all optimize:assets"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
