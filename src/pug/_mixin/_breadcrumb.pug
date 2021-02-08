@@ -1,0 +1,25 @@
+//- http://schema.org/BreadcrumbList
+//- https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
+mixin breadcrumb(levels)
+  ol.Breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+    each level, index in levels
+      - var count = index + 1
+      - var text = level[0]
+      - var link = level[1]
+
+      li.Breadcrumb_item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+
+        if count != levels.length
+          a.Breadcrumb_link(href=link itemprop="item")
+            span(itemprop="name") #{text}
+          meta(itemprop="position" content!=count)
+        else 
+          a.Breadcrumb_link(href=link itemprop="item" aria-current="page")
+            span(itemprop="name") #{text}
+          meta(itemprop="position" content!=count)
+
+//- nav
+//-   +breadcrumb([
+//-     ["Home", "/"],
+//-     ["About", "/about/"]
+//-   ])
