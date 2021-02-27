@@ -1,10 +1,3 @@
-## 0.ソースコード管理
-git, githubで行う。  
-
-さうなしのorganizationアカウントにprivateリポジトリ作る。  
-過去の保守案件も適宜githubに移行。
-https://github.com/saunashi-admin
-
 ## 1.ディレクトリ構造
 ### 1-1.公開フォルダ これはいじらない！
 ```
@@ -35,8 +28,8 @@ src/
 ```
 
 ## 2.タスクランナー
-npm-scriptsでもwebpackでもgulpでもなんでもいいです。  
-以下のタスクは行いましょう  
+npm-scriptsでもwebpackでもgulpでもなんでもいい
+以下のタスクは行う
 * Browsersync等によるローカルサーバーの起動
 * 画像圧縮
 * scssのコンパイル
